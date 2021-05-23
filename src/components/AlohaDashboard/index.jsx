@@ -1,6 +1,6 @@
 import { Component } from "react";
-import AlohaSorted from "../AlohaSorted";
 
+import SearchedList from '../SearchedList';
 class AlohaDashboard extends Component {
 	constructor(props) {
 		super(props);
@@ -13,34 +13,41 @@ class AlohaDashboard extends Component {
 				},
 				{
 					id: 2,
-          firstName: "User 2",
+					firstName: "User 12",
 					lastName: "Surname 2",
 				},
-        {
+				{
 					id: 3,
-          firstName: "User 3",
+					firstName: "User 3",
 					lastName: "Surname 3",
 				},
-        {
+				{
 					id: 4,
-          firstName: "User 4",
+					firstName: "User 4",
 					lastName: "Surname 4",
 				},
 			],
 		};
 	}
 
-  setUsers = (users)=>{
-    this.setState({
-      users,
-    })
-  }
+	setUsers = (users) => {
+		this.setState({
+			users,
+		});
+	};
+	deleteUser = (user) => {
+		const { users} = this.state;
+		this.setUsers(users.filter((userArr)=>userArr !== user));
 
+	};
+	search = ({value}) =>{
+		console.log(value)
+	}
 	render() {
-    const {users} = this.state
+		const { users } = this.state;
 		return (
 			<>
-				<AlohaSorted users={users} setUsers={this.setUsers} />
+				<SearchedList users={users} setUsers={this.setUsers} deleteUser={this.deleteUser}/>
 			</>
 		);
 	}

@@ -9,9 +9,6 @@ function App() {
 
 	return (
 		<>
-			<Input />
-			<Aloha name="Denis" />
-			<Aloha name="Test"/>
 			<AlohaDashboard/>
 		</>
 	);

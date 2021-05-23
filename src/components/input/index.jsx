@@ -8,6 +8,8 @@ class Input extends Component{
   };
  
   writeValue = ({target}) =>{
+    const {users} = this.props;
+    console.log(users)
     this.setState({
       value:target.value,
     })

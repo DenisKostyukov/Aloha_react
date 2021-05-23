@@ -16,10 +16,10 @@ class AlohaSorted extends Component{
     this.setState({isDirectSort: !isDirectSort})
   }
   render(){
-    const {users} = this.props;
+    const {users, deleteUser, searchUser} = this.props;
     return (
       <>
-        <AlohaList users = {users}/>
+        <AlohaList users = {users} deleteUser = {deleteUser} searchUser = {searchUser}/>
         <button onClick={this.sortUsers}>Sort</button>
       </>
     )
