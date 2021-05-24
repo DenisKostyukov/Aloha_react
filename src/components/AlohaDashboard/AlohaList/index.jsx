@@ -1,4 +1,4 @@
-import Aloha from '../Aloha';
+import Aloha from '../../Aloha';
 
 function AlohaList({users, deleteUser, searchUser}){
   const createUser = (users)=>{

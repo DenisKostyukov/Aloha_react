@@ -6,16 +6,18 @@ class SearchedList extends Component {
 	}
 	searchUser = ({ target: { value } }) => {
 		const { users, setUsers } = this.props;
-			const searched = users.filter((user) => {
+		const searched = [...users];
+		setUsers(
+			searched.filter((user) => {
 				const { firstName, lastName } = user;
 				return `${firstName} ${lastName}`
 					.toLowerCase()
 					.includes(value.toLowerCase());
-			});
-    setUsers(searched)
+			}),
+		);
 	};
 	render() {
-		const { users, deleteUser, setUsers } = this.props;
+		const { users, deleteUser, setUsers} = this.props;
 		return (
 			<>
 				<input onKeyUp={this.searchUser} />

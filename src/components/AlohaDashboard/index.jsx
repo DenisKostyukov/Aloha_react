@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import SearchedList from '../SearchedList';
+import SearchedList from './SearchedList';
 class AlohaDashboard extends Component {
 	constructor(props) {
 		super(props);
